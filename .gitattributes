@@ -1,0 +1,4 @@
+Jenkinsfile merge=ours
+.pipeline/config.yml merge=ours
+README.md merge=ours
+.gitattributes merge=ours

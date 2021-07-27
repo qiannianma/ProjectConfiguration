@@ -1,0 +1,128 @@
+{
+    // eslint
+    "eslint.codeAction.showDocumentation": {
+        "enable": true
+    },
+    "eslint.codeAction.disableRuleComment": {
+        "enable": true
+    },
+    "eslint.validate": ["javascript", "javascriptreact"],
+    "eslint.codeActionsOnSave.mode": "all",
+    "eslint.run": "onSave",
+
+    /*  prettier */
+    "prettier.printWidth": 100, // Beyond maximum line feed
+    "prettier.tabWidth": 4, // The number of indented bytes
+    "prettier.useTabs": false, // You don't use tabs for indentation, you use Spaces
+    "prettier.semi": true, // Add a semicolon at the end of the sentence
+    "prettier.singleQuote": true, // Use single quotes instead of double quotes
+    "prettier.proseWrap": "preserve",
+    "prettier.arrowParens": "avoid", //  (x) => {} Whether to have curly braces if the arrow function takes only one argument. avoid：Omit the parentheses
+    "prettier.bracketSpacing": true, // Spaces between objects, array parentheses, and text "{ foo: bar }"
+    "prettier.disableLanguages": ["vue"], // Vue files are not formatted, the formatting of vUE files is set separately
+    "prettier.endOfLine": "auto", // end is \n \r \n\r auto
+    "prettier.htmlWhitespaceSensitivity": "ignore",
+    "prettier.ignorePath": ".prettierignore", // Fill in the project in the. Prettier Ignore file without using the prettier formatted file
+    "prettier.jsxBracketSameLine": false, // Whether to put '>' on a separate line in JSX
+    "prettier.jsxSingleQuote": false, // Use single quotes instead of double quotes in JSX
+    "prettier.requireConfig": false, // Require a 'prettierconfig' to format prettier
+    "prettier.trailingComma": "none", // Whether to place a comma after the last element of an object or array (with the trailing comma in ES5)
+
+    // Exclude these folders/files when using the search function
+    "search.exclude": {
+        "**/node_modules": true,
+        "**/bower_components": true,
+        "**/target": true,
+        "**/logs": true
+    },
+
+    // These files will not be displayed in the workspace
+    "files.exclude": {
+        "**/.git": true,
+        "**/.svn": true,
+        "**/.hg": true,
+        "**/CVS": true,
+        "**/.DS_Store": true,
+        "**/*.js": {
+            "when": "$(basename).ts" //The JS file generated after TS compilation will not be displayed in the working air
+        },
+        "**/node_modules": true
+    },
+
+    // Annotation configuration
+    "fileheader.configObj": {
+        "autoAdd": false, // Auto add header comments are enabled by default, and will be automatically added if the file is not set with header comments
+        "autoAlready": false, // The default open
+        "prohibitAutoAdd": ["json", "md"], // Disable.json.md file, automatically add header comments
+        "wideSame": false, // Set to true on
+        "wideNum": 13 // The field length defaults to 13
+    },
+
+    // cucumber test
+    // https://github.com/alexkrechik/VSCucumberAutoComplete
+    "cucumberautocomplete.steps": ["test/steps/**/*.step.js"],
+    "cucumberautocomplete.syncfeatures": "test/features/**/*feature",
+    "cucumberautocomplete.strictGherkinCompletion": true,
+    "cucumberautocomplete.strictGherkinValidation": true,
+    "cucumberautocomplete.smartSnippets": true,
+    "cucumberautocomplete.stepsInvariants": true,
+    "cucumberautocomplete.customParameters": [
+        {
+            "parameter": "{ab}",
+            "value": "(a|b)"
+        },
+        {
+            "parameter": "/{a.*}/",
+            "value": "a"
+        }
+    ],
+    "cucumberautocomplete.pages": {
+        "main": "test/pages/page.js"
+    },
+    "cucumberautocomplete.skipDocStringsFormat": true,
+    "cucumberautocomplete.formatConfOverride": {
+        "And": 3,
+        "But": "relative"
+    },
+    "cucumberautocomplete.onTypeFormat": true,
+    "cucumberautocomplete.gherkinDefinitionPart": "(Given|When|Then)\\(",
+    "cucumberautocomplete.stepRegExSymbol": "/",
+
+    // default editor configuration
+    "editor.formatOnSave": false,
+    "editor.fontSize": 18,
+    "editor.wordWrap": "off",
+    "editor.detectIndentation": false,
+    "editor.quickSuggestions": {
+        "comments": false,
+        "strings": true,
+        "other": true
+    },
+    "editor.codeActionsOnSave": {
+        "source.fixAll.eslint": true
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "[javascript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[html]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[json]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[jsonc]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode",
+        "editor.formatOnSave": true
+    },
+    "[feature]": {
+        "editor.defaultFormatter": "alexkrechik.cucumberautocomplete",
+        "editor.formatOnSave": true
+    },
+    "[typescript]": {
+        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    }
+}
